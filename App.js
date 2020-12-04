@@ -5,11 +5,21 @@ import * as Location from "expo-location";
 
 // View = div, Text = span
 export default class extends React.Component {
+  state = { isLoading: true };
   getLocation = async () => {
-    const location = await Location.getCurrentPositionAsync();
+    try {
+      await Location.requestPermissionsAsync();
+      const {
+        coords: { latitude, longitude },
+      } = await Location.getCurrentPositionAsync();
+      this.setState({ isLoading: false });
+    } catch (error) {}
   };
-  componentDidMount() {}
+  componentDidMount() {
+    this.getLocation();
+  }
   render() {
-    return <Loading />;
+    const { isLoading } = this.state;
+    return isLoading ? <Loading /> : null;
   }
 }
