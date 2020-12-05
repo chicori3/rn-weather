@@ -12,6 +12,15 @@ export default function Weather({ temp }) {
 
 Weather.propTypes = {
   temp: PropTypes.number.isReuqired,
+  condition: PropTypes.oneOf([
+    "ThunderStorm",
+    "Drizzle",
+    "Rain",
+    "Snow",
+    "Atmosphere",
+    "Clear",
+    "Clouds",
+  ]).isRequired,
 };
 
 const styles = StyleSheet.create({
