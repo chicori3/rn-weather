@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 export default function Loading() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>보자 보자 어디 보자</Text>
+      <Text style={styles.text}>보자 보자 날씨 보자</Text>
     </View>
   );
 }
