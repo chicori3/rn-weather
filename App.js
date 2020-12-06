@@ -22,7 +22,7 @@ export default class extends React.Component {
     this.setState({
       isLoading: false,
       condition: weather[0].main,
-      temp: main.temp,
+      temp,
     }); // 온도 가져오기
   };
   getLocation = async () => {
