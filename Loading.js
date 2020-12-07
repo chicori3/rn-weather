@@ -1,9 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, StatusBar } from "react-native";
 
 export default function Loading() {
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="default" />
       <Text style={styles.text}>보자 보자 날씨 보자</Text>
     </View>
   );

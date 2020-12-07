@@ -1,5 +1,5 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
+import { Alert } from "react-native";
 import Loading from "./Loading";
 import * as Location from "expo-location";
 import axios from "axios";
@@ -32,8 +32,9 @@ export default class extends React.Component {
         coords: { latitude, longitude },
       } = await Location.getCurrentPositionAsync(); // 현재 위치를 찾는 메서드
       this.getWeather(latitude, longitude);
-      this.setState({ isLoading: false });
-    } catch (error) {}
+    } catch (error) {
+      Alert.alert("위치가 어디에요...?");
+    }
   };
   componentDidMount() {
     this.getLocation();
